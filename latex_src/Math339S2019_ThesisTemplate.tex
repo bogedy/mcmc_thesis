@@ -587,7 +587,7 @@ Let us show that we can sample from each of these conditional distributions. Fir
 
 Similarly, for $G_i=aa$ we have $p(Z_i = 1 | G_i = aa, r, f)=\frac{f(1-r)}{(1-f)(1-r)^2+f(1-r)}$. We also know that $p(Z_i=1|G_i=Aa)=0$, since IBD implies homozygous. Now we have our Bernoulli proportions for the full conditional distribution of $Z_i$.
 
-To sample from $p(f|U)$ and $p(r|Y)$, we make use of the Beta-Binomial conjugacy from example 4.1. As noted above, $U$ and $Y$ are each binomially distributed. Using the Beta priors assigned to $f$ and $r$, the Beta-Binomial conjugacy allows to sample prom the conditional distributions. We have that $p(f|U)\sim Beta(1+U, 1+(n-U))$ and $p(r|Y)\sim Beta(1+Y, 1+((2n-U)-Y))$.
+To sample from $p(f|U)$ and $p(r|Y)$, we make use of the Beta-Binomial conjugacy from example 4.1. As noted above, $U$ and $Y$ are each binomially distributed. Using the Beta priors assigned to $f$ and $r$, the Beta-Binomial conjugacy allows us to sample from the conditional distributions. We have that $p(f|U)\sim Beta(1+U, 1+(n-U))$ and $p(r|Y)\sim Beta(1+Y, 1+((2n-U)-Y))$.
 
 We now have all the steps for our Gibbs sampler and can implement it in R. The results for running the simulation for $10^4$ iterations are displayed in figure \ref{fig:inbreedinggibbs}. The code is included in the appendix.
 
